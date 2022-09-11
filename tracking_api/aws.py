@@ -16,7 +16,7 @@ class AwsStorageMgmt:
     def __init__(self):
         # self.s3_resour = boto3.resource("s3")
         self.s3_client = boto3.client("s3")
-        self.config = ConfigHandler(project_name="test01-api")
+        self.config = ConfigHandler(project_name="tracking-api")
         if self.config.check_config_exists():
             self.configs = self.config.get_configs()
             self.bucket = self.configs.get("aws_bucket", None)
