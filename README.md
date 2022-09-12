@@ -30,8 +30,9 @@ poetry run start
 
 
 ## tracking api
-- find and replace instances of `test01_api`
+- find and replace instances of `test01_api` and `test01-api` with `tracking_api` and `tracking-api` respectivly
 - setup new config file with secrets manager
 ```sh
 smgmt create -n tracking-api -s '{"aws_bucket":"<bucket>","object_prefix":"dev/tracking-api"}' --config
 ```
+- `poetry install`
