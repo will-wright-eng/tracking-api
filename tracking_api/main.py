@@ -54,11 +54,14 @@ async def test_response():
 async def accept_data(request: Request):
     try:
         result = await request.json()
+        # add timestamp
         timestamp = get_timestamp()
         result['post_timestamp'] = timestamp
         print(result)
+        # name json object
         object_name = f"{APP_NAME}_{timestamp}.json"
         file_path = str(Path(object_name).resolve())
+        # write to s3 bucket
         write_json_file(filename=file_path, json_data=result)
         aws.upload_json(object_name=object_name, file_path=file_path)
         return result

@@ -2,6 +2,7 @@
 name = "tracking-api"
 version = "0.1.0"
 description = ""
+authors = ["william-cass-wright <example@gmail.com>"]
 
 [tool.poetry.scripts]
 start = "tracking_api.main:start"
